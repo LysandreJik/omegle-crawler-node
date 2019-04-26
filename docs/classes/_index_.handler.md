@@ -1,4 +1,4 @@
-[omegle-crawler-node](../README.md) > ["lib/Handler"](../modules/_lib_handler_.md) > [Handler](../classes/_lib_handler_.handler.md)
+[omegle-crawler-node](../README.md) > ["index"](../modules/_index_.md) > [Handler](../classes/_index_.handler.md)
 
 # Class: Handler
 
@@ -10,42 +10,42 @@
 
 ### Constructors
 
-* [constructor](_lib_handler_.handler.md#constructor)
+* [constructor](_index_.handler.md#constructor)
 
 ### Properties
 
-* [__onCaptcha](_lib_handler_.handler.md#__oncaptcha)
-* [__onConnected](_lib_handler_.handler.md#__onconnected)
-* [__onDisconnected](_lib_handler_.handler.md#__ondisconnected)
-* [__onError](_lib_handler_.handler.md#__onerror)
-* [__onInformation](_lib_handler_.handler.md#__oninformation)
-* [__onMessageReceived](_lib_handler_.handler.md#__onmessagereceived)
-* [__onMessageSent](_lib_handler_.handler.md#__onmessagesent)
-* [__onUnexpectedToken](_lib_handler_.handler.md#__onunexpectedtoken)
-* [browser](_lib_handler_.handler.md#browser)
-* [page](_lib_handler_.handler.md#page)
-* [puppeteerOptions](_lib_handler_.handler.md#puppeteeroptions)
+* [__onCaptcha](_index_.handler.md#__oncaptcha)
+* [__onConnected](_index_.handler.md#__onconnected)
+* [__onDisconnected](_index_.handler.md#__ondisconnected)
+* [__onError](_index_.handler.md#__onerror)
+* [__onInformation](_index_.handler.md#__oninformation)
+* [__onMessageReceived](_index_.handler.md#__onmessagereceived)
+* [__onMessageSent](_index_.handler.md#__onmessagesent)
+* [__onUnexpectedToken](_index_.handler.md#__onunexpectedtoken)
+* [browser](_index_.handler.md#browser)
+* [page](_index_.handler.md#page)
+* [puppeteerOptions](_index_.handler.md#puppeteeroptions)
 
 ### Methods
 
-* [__observeLogs](_lib_handler_.handler.md#__observelogs)
-* [exit](_lib_handler_.handler.md#exit)
-* [onCaptcha](_lib_handler_.handler.md#oncaptcha)
-* [onConnected](_lib_handler_.handler.md#onconnected)
-* [onDisconnected](_lib_handler_.handler.md#ondisconnected)
-* [onError](_lib_handler_.handler.md#onerror)
-* [onInformation](_lib_handler_.handler.md#oninformation)
-* [onMessageReceived](_lib_handler_.handler.md#onmessagereceived)
-* [onMessageSent](_lib_handler_.handler.md#onmessagesent)
-* [onUnexpectedToken](_lib_handler_.handler.md#onunexpectedtoken)
-* [sendMessage](_lib_handler_.handler.md#sendmessage)
-* [solveCaptcha](_lib_handler_.handler.md#solvecaptcha)
-* [solveCaptchaWith2CaptchaApiKey](_lib_handler_.handler.md#solvecaptchawith2captchaapikey)
-* [startConversation](_lib_handler_.handler.md#startconversation)
+* [__observeLogs](_index_.handler.md#__observelogs)
+* [exit](_index_.handler.md#exit)
+* [onCaptcha](_index_.handler.md#oncaptcha)
+* [onConnected](_index_.handler.md#onconnected)
+* [onDisconnected](_index_.handler.md#ondisconnected)
+* [onError](_index_.handler.md#onerror)
+* [onInformation](_index_.handler.md#oninformation)
+* [onMessageReceived](_index_.handler.md#onmessagereceived)
+* [onMessageSent](_index_.handler.md#onmessagesent)
+* [onUnexpectedToken](_index_.handler.md#onunexpectedtoken)
+* [sendMessage](_index_.handler.md#sendmessage)
+* [solveCaptcha](_index_.handler.md#solvecaptcha)
+* [solveCaptchaWith2CaptchaApiKey](_index_.handler.md#solvecaptchawith2captchaapikey)
+* [startConversation](_index_.handler.md#startconversation)
 
 ### Object literals
 
-* [__conversationFailSafe](_lib_handler_.handler.md#__conversationfailsafe)
+* [__conversationFailSafe](_index_.handler.md#__conversationfailsafe)
 
 ---
 
@@ -55,9 +55,9 @@
 
 ###  constructor
 
-⊕ **new Handler**(options: *`__type`*): [Handler](_lib_handler_.handler.md)
+⊕ **new Handler**(options: *`__type`*): [Handler](_index_.handler.md)
 
-*Defined in lib/Handler.ts:24*
+*Defined in [index.ts:24](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L24)*
 
 **Parameters:**
 
@@ -65,7 +65,7 @@
 | ------ | ------ |
 | options | `__type` |
 
-**Returns:** [Handler](_lib_handler_.handler.md)
+**Returns:** [Handler](_index_.handler.md)
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 **● __onCaptcha**: *`undefined` \| `function`*
 
-*Defined in lib/Handler.ts:20*
+*Defined in [index.ts:20](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L20)*
 
 ___
 <a id="__onconnected"></a>
@@ -86,7 +86,7 @@ ___
 
 **● __onConnected**: *`undefined` \| `function`*
 
-*Defined in lib/Handler.ts:17*
+*Defined in [index.ts:17](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L17)*
 
 ___
 <a id="__ondisconnected"></a>
@@ -95,7 +95,7 @@ ___
 
 **● __onDisconnected**: *`undefined` \| `function`*
 
-*Defined in lib/Handler.ts:19*
+*Defined in [index.ts:19](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L19)*
 
 ___
 <a id="__onerror"></a>
@@ -104,7 +104,7 @@ ___
 
 **● __onError**: *`undefined` \| `function`*
 
-*Defined in lib/Handler.ts:16*
+*Defined in [index.ts:16](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L16)*
 
 ___
 <a id="__oninformation"></a>
@@ -113,7 +113,7 @@ ___
 
 **● __onInformation**: *`undefined` \| `function`*
 
-*Defined in lib/Handler.ts:21*
+*Defined in [index.ts:21](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L21)*
 
 ___
 <a id="__onmessagereceived"></a>
@@ -122,7 +122,7 @@ ___
 
 **● __onMessageReceived**: *`undefined` \| `function`*
 
-*Defined in lib/Handler.ts:18*
+*Defined in [index.ts:18](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L18)*
 
 ___
 <a id="__onmessagesent"></a>
@@ -131,7 +131,7 @@ ___
 
 **● __onMessageSent**: *`undefined` \| `function`*
 
-*Defined in lib/Handler.ts:23*
+*Defined in [index.ts:23](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L23)*
 
 ___
 <a id="__onunexpectedtoken"></a>
@@ -140,7 +140,7 @@ ___
 
 **● __onUnexpectedToken**: *`undefined` \| `function`*
 
-*Defined in lib/Handler.ts:22*
+*Defined in [index.ts:22](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L22)*
 
 ___
 <a id="browser"></a>
@@ -149,7 +149,7 @@ ___
 
 **● browser**: *`Browser`*
 
-*Defined in lib/Handler.ts:12*
+*Defined in [index.ts:12](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L12)*
 
 ___
 <a id="page"></a>
@@ -158,7 +158,7 @@ ___
 
 **● page**: *`Page`*
 
-*Defined in lib/Handler.ts:13*
+*Defined in [index.ts:13](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L13)*
 
 ___
 <a id="puppeteeroptions"></a>
@@ -167,7 +167,7 @@ ___
 
 **● puppeteerOptions**: *`__type`*
 
-*Defined in lib/Handler.ts:14*
+*Defined in [index.ts:14](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L14)*
 
 ___
 
@@ -179,7 +179,7 @@ ___
 
 ▸ **__observeLogs**(info: *`ConsoleMessage`*): `Promise`<`void`>
 
-*Defined in lib/Handler.ts:268*
+*Defined in [index.ts:268](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L268)*
 
 **Parameters:**
 
@@ -196,7 +196,7 @@ ___
 
 ▸ **exit**(): `Promise`<`void`>
 
-*Defined in lib/Handler.ts:126*
+*Defined in [index.ts:126](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L126)*
 
 Closes the browser.
 
@@ -209,7 +209,7 @@ ___
 
 ▸ **onCaptcha**(event: *`function`*): `void`
 
-*Defined in lib/Handler.ts:229*
+*Defined in [index.ts:229](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L229)*
 
 Event triggered when a captcha needs to be solved in order to access the chatroom.
 
@@ -228,7 +228,7 @@ ___
 
 ▸ **onConnected**(event: *`function`*): `void`
 
-*Defined in lib/Handler.ts:202*
+*Defined in [index.ts:202](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L202)*
 
 Event triggered when the user is connected to a chatroom.
 
@@ -247,7 +247,7 @@ ___
 
 ▸ **onDisconnected**(event: *`function`*): `void`
 
-*Defined in lib/Handler.ts:221*
+*Defined in [index.ts:221](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L221)*
 
 Event triggered when the user is disconnected from the chatroom.
 
@@ -266,7 +266,7 @@ ___
 
 ▸ **onError**(event: *`function`*): `void`
 
-*Defined in lib/Handler.ts:248*
+*Defined in [index.ts:248](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L248)*
 
 Event triggered when the chatroom raises an error.
 
@@ -285,7 +285,7 @@ ___
 
 ▸ **onInformation**(event: *`function`*): `void`
 
-*Defined in lib/Handler.ts:240*
+*Defined in [index.ts:240](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L240)*
 
 Event triggered when the an information is given.
 
@@ -304,7 +304,7 @@ ___
 
 ▸ **onMessageReceived**(event: *`function`*): `void`
 
-*Defined in lib/Handler.ts:213*
+*Defined in [index.ts:213](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L213)*
 
 Event triggered when the stranger sent a message.
 
@@ -323,7 +323,7 @@ ___
 
 ▸ **onMessageSent**(event: *`function`*): `void`
 
-*Defined in lib/Handler.ts:264*
+*Defined in [index.ts:264](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L264)*
 
 Event triggered when the user sent a message. Used to verify that the message has been delivered.
 
@@ -342,7 +342,7 @@ ___
 
 ▸ **onUnexpectedToken**(event: *`function`*): `void`
 
-*Defined in lib/Handler.ts:256*
+*Defined in [index.ts:256](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L256)*
 
 Event triggered when an unexpected token is identified.
 
@@ -361,7 +361,7 @@ ___
 
 ▸ **sendMessage**(message: *`string`*, delay?: *`number`*): `Promise`<`void`>
 
-*Defined in lib/Handler.ts:138*
+*Defined in [index.ts:138](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L138)*
 
 Sends message to the stranger. A delay between keystrokes can be given. This delay is so that the information "Stranger is typing..." is displayed for a given amount of time.
 
@@ -381,9 +381,9 @@ ___
 
 ▸ **solveCaptcha**(solvedCaptcha: *`string`*): `Promise`<`void`>
 
-*Defined in lib/Handler.ts:164*
+*Defined in [index.ts:164](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L164)*
 
-Solves the captcha currently on the page according to the solvedCaptcha response. If you do not know how to get a solved captcha, I recommend using the [Handler.solveCaptchaWith2CaptchaApiKey](_lib_handler_.handler.md#solvecaptchawith2captchaapikey) function which makes use of the 2captcha API. Any other API will work as well.
+Solves the captcha currently on the page according to the solvedCaptcha response. If you do not know how to get a solved captcha, I recommend using the [Handler.solveCaptchaWith2CaptchaApiKey](_index_.handler.md#solvecaptchawith2captchaapikey) function which makes use of the 2captcha API. Any other API will work as well.
 
 **Parameters:**
 
@@ -400,7 +400,7 @@ ___
 
 ▸ **solveCaptchaWith2CaptchaApiKey**(captchaIdentifier: *`string`*, twoCaptchaAPIKey: *`string`*): `Promise`<`void`>
 
-*Defined in lib/Handler.ts:155*
+*Defined in [index.ts:155](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L155)*
 
 Solves the captcha using the 2captcha API. Returns a promise that resolves when the captcha has been solved.
 
@@ -422,7 +422,7 @@ ___
 
 ▸ **startConversation**(conversationType: *"video"*, videoPath: *`string`*, topics?: *`string`[]*, cookiesFilePath?: *`undefined` \| `string`*): `Promise`<`void`>
 
-*Defined in lib/Handler.ts:37*
+*Defined in [index.ts:37](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L37)*
 
 Starts a new conversation. Opens a new browser if the instance has no currently opened browser.
 
@@ -436,7 +436,7 @@ Starts a new conversation. Opens a new browser if the instance has no currently 
 
 **Returns:** `Promise`<`void`>
 
-*Defined in lib/Handler.ts:47*
+*Defined in [index.ts:47](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L47)*
 
 Starts a new conversation. Opens a new browser if the instance has no currently opened browser.
 
@@ -461,7 +461,7 @@ ___
 
 **__conversationFailSafe**: *`object`*
 
-*Defined in lib/Handler.ts:24*
+*Defined in [index.ts:24](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L24)*
 
 <a id="__conversationfailsafe.connected"></a>
 
@@ -469,7 +469,7 @@ ___
 
 **● connected**: *`false`* = false
 
-*Defined in lib/Handler.ts:24*
+*Defined in [index.ts:24](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L24)*
 
 ___
 <a id="__conversationfailsafe.id"></a>
@@ -478,7 +478,7 @@ ___
 
 **● id**: *`number`* = 0
 
-*Defined in lib/Handler.ts:24*
+*Defined in [index.ts:24](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L24)*
 
 ___
 
