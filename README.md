@@ -181,6 +181,8 @@ handler.sendMessage("Hi there", 50);
 
 Included is a way to solve captchas using the 2captcha API. When a captcha is displayed on screen, the `onCaptcha` event is triggered, calling the bound function with a captcha identifier. This built-in method can be used as follows:
 
+Returns a promise that resolves once the captcha has been solved.
+
 ```javascript
 handler.onCaptcha(captchaIdentifier => {
 	handler.solveCaptchaWith2CaptchaApiKey(captchaIdentifier, "api_key");
@@ -190,6 +192,8 @@ handler.onCaptcha(captchaIdentifier => {
 #### solveCaptcha(captchaResult: string)
 
 You can use the captcha identifier with any API to solve this captcha. Once a result is given by the API, you can solve the captcha as follows:
+
+Returns a promise that resolves once the captcha has been solved.
 
 ```javascript
 handler.onCaptcha(captchaIdentifier => {
