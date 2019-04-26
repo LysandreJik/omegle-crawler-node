@@ -207,7 +207,7 @@ class Handler {
                 const args = this.puppeteerOptions.args
                     ? [...this.puppeteerOptions.args, ...videoOptions(videoPath)]
                     : videoOptions(videoPath);
-                this.puppeteerOptions = Object.assign({}, this.puppeteerOptions, { args });
+                this.puppeteerOptions = { ...this.puppeteerOptions, args };
             }
             this.browser = await puppeteer_1.launch(this.puppeteerOptions);
         }
@@ -215,11 +215,14 @@ class Handler {
             [this.page] = await this.browser.pages();
             if (cookiesFilePath) {
                 try {
-                    const cookies = JSON.parse(fs_1.readFileSync(cookiesFilePath, "utf-8"));
-                    await this.page.setCookie(...cookies);
+                    if (fs_1.existsSync(cookiesFilePath)) {
+                        const cookies = JSON.parse(fs_1.readFileSync(cookiesFilePath, "utf-8"));
+                        await this.page.setCookie(...cookies);
+                    }
                 }
                 catch (e) {
-                    console.error("Error loading cookies", e);
+                    if (e)
+                        console.error("Error loading cookies", e);
                 }
             }
             try {

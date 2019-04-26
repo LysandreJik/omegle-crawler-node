@@ -2,7 +2,7 @@ import { Browser, Page } from "puppeteer";
 export declare class Handler {
     browser?: Browser;
     page?: Page;
-    puppeteerOptions: {};
+    puppeteerOptions?: {};
     private __onError?;
     private __onConnected?;
     private __onMessageReceived?;
@@ -12,7 +12,7 @@ export declare class Handler {
     private __onUnexpectedToken?;
     private __onMessageSent?;
     private __conversationFailSafe;
-    constructor(options: {});
+    constructor(options?: {});
     /**
      * Starts a new conversation. Opens a new browser if the instance has no currently opened browser.
      * @param conversationType String parameter: either "text" or "video". If the video is specified, an **absolute** video path must be provided as third parameter
