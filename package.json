@@ -14,6 +14,8 @@
 	"author": "Lysandre Debut <lysandre.debut@gmail.com>",
 	"license": "MIT",
 	"devDependencies": {
+		"typedoc": "^0.14.2",
+		"typedoc-plugin-markdown": "^1.2.0",
 		"typescript": "^3.4.5"
 	},
 	"dependencies": {
