@@ -1,5 +1,5 @@
 import { Browser, Page, launch, ConsoleMessage, BrowserOptions } from "puppeteer";
-import { readFileSync, writeFileSync } from "fs";
+import { readFileSync, writeFileSync, existsSync } from "fs";
 import fetch from "node-fetch";
 
 const videoOptions = (videoPath: string) => [
@@ -11,7 +11,7 @@ const videoOptions = (videoPath: string) => [
 export class Handler {
 	browser?: Browser;
 	page?: Page;
-	puppeteerOptions: {};
+	puppeteerOptions?: {};
 
 	private __onError?: (error: string) => any;
 	private __onConnected?: () => any;
@@ -23,7 +23,7 @@ export class Handler {
 	private __onMessageSent?: (message: string) => any;
 	private __conversationFailSafe: { id: number; connected: boolean } = { id: 0, connected: false };
 
-	constructor(options: {}) {
+	constructor(options?: {}) {
 		this.puppeteerOptions = options;
 	}
 
@@ -72,10 +72,12 @@ export class Handler {
 			[this.page] = await this.browser.pages();
 			if (cookiesFilePath) {
 				try {
-					const cookies = JSON.parse(readFileSync(cookiesFilePath, "utf-8"));
-					await this.page.setCookie(...cookies);
+					if (existsSync(cookiesFilePath)) {
+						const cookies = JSON.parse(readFileSync(cookiesFilePath, "utf-8"));
+						await this.page.setCookie(...cookies);
+					}
 				} catch (e) {
-					console.error("Error loading cookies", e);
+					if (e) console.error("Error loading cookies", e);
 				}
 			}
 			try {

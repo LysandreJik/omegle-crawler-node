@@ -1,6 +1,6 @@
 # omegle-crawler-node
 
-Node library to connect to and interact with the Omegle website.
+Node library to connect to and interact with the Omegle website. This library includes support for captcha solving, as well as video chat.
 
 ## Getting started
 
@@ -21,5 +21,3 @@ yarn add omegle-node-crawler
 ### Usage
 
 ## Documentation
-
-The full documentation can be found [here](docs/classes/_index_.handler.md)
