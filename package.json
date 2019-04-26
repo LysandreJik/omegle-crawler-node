@@ -1,6 +1,6 @@
 {
 	"name": "omegle-crawler-node",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Node library to connect to and interact with Omegle's website.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
