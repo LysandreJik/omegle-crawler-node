@@ -62,6 +62,23 @@ handler.sendMessage("Hello"); // __dirname returns the path of the current direc
 
 ## Documentation
 
+### Instanciation
+
+Each instance of `Handler` is independant, allowing you to have multiple crawlers running at the same time. _Keep in mind that the most crawlers are running, the highter the chance that Omegle detects you're a bot and flags you, increasing your captcha rate and the chance to get IP banned._
+
+Create a new instance using the `new` keyword:
+
+#### new Handler(options)
+
+The options are puppeteer options, and can therefore be found on their [API page](https://github.com/GoogleChrome/puppeteer/blob/v1.15.0/docs/api.md#puppeteerlaunchoptions).
+Some of them are overriden when trying to use the video: `--use-fake-ui-for-media-stream`, `--use-fake-device-for-media-stream`, `--use-file-for-fake-video-capture=${videoPath}`
+
+Example:
+
+```typescript
+const handler = new Handler();
+```
+
 ### Events
 
 Here are listed all the events that can be triggered by this library.
@@ -69,6 +86,8 @@ Here are listed all the events that can be triggered by this library.
 #### onConnected(event: () => any)
 
 Triggered when the instance has connected to a stranger.
+
+Example:
 
 ```javascript
 handler.onConnected(() => console.log("Connected to stranger!"));
@@ -78,6 +97,8 @@ handler.onConnected(() => console.log("Connected to stranger!"));
 
 Triggered when the instance has connected to a stranger.
 
+Example:
+
 ```javascript
 handler.onConnected(() => console.log("Connected to stranger!"));
 ```
@@ -86,6 +107,8 @@ handler.onConnected(() => console.log("Connected to stranger!"));
 
 Triggered when the instance has connected to a stranger.
 
+Example:
+
 ```javascript
 handler.onConnected(() => console.log("Connected to stranger!"));
 ```
@@ -93,6 +116,8 @@ handler.onConnected(() => console.log("Connected to stranger!"));
 #### onMessageReceived(event: (message: string) => any)
 
 Triggered when the stranger has sent a message
+
+Example:
 
 ```javascript
 handler.onMessageReceived(message => console.log("Message received:", message));
@@ -104,6 +129,8 @@ Triggered when an information was printed on screen.
 
 Example of information messages: "Omegle couldn't find someone with the same interests".
 
+Example:
+
 ```javascript
 handler.onInformation(information => console.log("Received information", information));
 ```
@@ -114,6 +141,8 @@ Triggered when the instance has received an error.
 
 The error "Connection to server blocked." means you have been IP blocked by Omegle. This usually happens if you're connecting from a server based on a platform such as Azure or AWS.
 
+Example:
+
 ```javascript
 handler.onError(error => console.log("Received error", error));
 ```
@@ -122,6 +151,8 @@ handler.onError(error => console.log("Received error", error));
 
 Triggered when the instance has connected to a stranger.
 
+Example:
+
 ```javascript
 handler.onConnected(message => console.log("Script sent message", message));
 ```
@@ -129,6 +160,8 @@ handler.onConnected(message => console.log("Script sent message", message));
 #### onUnexpectedToken(event: (unexpectedToken: string) => any)
 
 Triggered when the instance has received an unexpected token.
+
+Example:
 
 ```javascript
 handler.onConnected(unexpectedToken => console.log("Unexpected token!", unexpectedToken));
@@ -199,4 +232,14 @@ Returns a promise that resolves once the captcha has been solved.
 handler.onCaptcha(captchaIdentifier => {
 	const result = getResultFromYourAPI(captchaIdentifier).then(result => handler.solveCaptcha(result));
 });
+```
+
+#### exit()
+
+Closes the browser.
+
+Returns a promise that resolves once the browser has been closed.
+
+```javascript
+handler.exit();
 ```

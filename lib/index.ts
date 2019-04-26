@@ -98,7 +98,7 @@ export class Handler {
 			.on("console", this.__observeLogs)
 			.on("dialog", dialog => dialog.accept());
 
-		if (this.page.url() === "https://www.omegle.com") {
+		if (this.page.url() === "https://www.omegle.com/" || this.page.url() === "https://www.omegle.com" || this.page.url() === "www.omegle.com") {
 			await this.page.waitFor(1000);
 			await this.page.keyboard.press("escape");
 		} else {
