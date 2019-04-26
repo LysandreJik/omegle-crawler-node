@@ -24,7 +24,7 @@
 
 ▸ **captchaSolver**(captchaIdentifier: *`string`*, twoCaptchaAPIKey: *`string`*): `Promise`<`string`>
 
-*Defined in [index.ts:396](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L396)*
+*Defined in index.ts:396*
 
 **Parameters:**
 
@@ -42,7 +42,7 @@ ___
 
 ▸ **mutationObserver**(): `Promise`<`void`>
 
-*Defined in [index.ts:317](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L317)*
+*Defined in index.ts:317*
 
 **Returns:** `Promise`<`void`>
 
@@ -53,7 +53,7 @@ ___
 
 ▸ **videoOptions**(videoPath: *`string`*): `string`[]
 
-*Defined in [index.ts:5](https://github.com/LysandreJik/omegle-crawler-node/blob/7e308e9/index.ts#L5)*
+*Defined in index.ts:5*
 
 **Parameters:**
 

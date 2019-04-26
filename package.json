@@ -2,9 +2,16 @@
 	"name": "omegle-crawler-node",
 	"version": "1.0.0",
 	"description": "Node library to connect to and interact with Omegle's website.",
-	"main": "index.js",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "tsc --declaration",
+		"generate-docs": "typedoc --theme markdown --out docs"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/LysandreJik/omegle-crawler-node.git"
 	},
 	"keywords": [
 		"node",
