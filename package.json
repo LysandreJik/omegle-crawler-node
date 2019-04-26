@@ -1,6 +1,6 @@
 {
 	"name": "omegle-crawler-node",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "Node library to connect to and interact with Omegle's website.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -21,13 +21,11 @@
 	"author": "Lysandre Debut <lysandre.debut@gmail.com>",
 	"license": "MIT",
 	"devDependencies": {
-		"typedoc": "^0.14.2",
-		"typedoc-plugin-markdown": "^1.2.0",
-		"typescript": "^3.4.5"
+		"typescript": "^3.4.5",
+		"@types/node-fetch": "^2.3.3",
+		"@types/puppeteer": "^1.12.3"
 	},
 	"dependencies": {
-		"@types/node-fetch": "^2.3.3",
-		"@types/puppeteer": "^1.12.3",
 		"node-fetch": "^2.3.0",
 		"puppeteer": "^1.15.0"
 	}
