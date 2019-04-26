@@ -95,22 +95,22 @@ handler.onConnected(() => console.log("Connected to stranger!"));
 
 #### onDisconnected(event: () => any)
 
-Triggered when the instance has connected to a stranger.
+Triggered when the instance has been disconnected from the stranger.
 
 Example:
 
 ```javascript
-handler.onConnected(() => console.log("Connected to stranger!"));
+handler.onDisconnected(() => console.log("Connected to stranger!"));
 ```
 
 #### onCaptcha(even: (captchaID: string) => any)
 
-Triggered when the instance has connected to a stranger.
+Triggered when the instance has received a captcha.
 
 Example:
 
 ```javascript
-handler.onConnected(() => console.log("Connected to stranger!"));
+handler.onCaptcha(() => console.log("Connected to stranger!"));
 ```
 
 #### onMessageReceived(event: (message: string) => any)

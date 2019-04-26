@@ -8,19 +8,23 @@ const videoOptions = (videoPath: string) => [
 	`--use-file-for-fake-video-capture=${videoPath}`
 ];
 
+type topics = string[];
+type cookiesFilePath = string;
+type videoPath = string;
+
 export class Handler {
 	browser?: Browser;
 	page?: Page;
 	puppeteerOptions?: {};
 
-	private __onError?: (error: string) => any;
 	private __onConnected?: () => any;
-	private __onMessageReceived?: (message: string) => any;
 	private __onDisconnected?: () => any;
+	private __onError?: (error: string) => any;
 	private __onCaptcha?: (captchaID: string) => any;
-	private __onInformation?: (information: string) => any;
-	private __onUnexpectedToken?: (unexpectedToken: string) => any;
 	private __onMessageSent?: (message: string) => any;
+	private __onInformation?: (information: string) => any;
+	private __onMessageReceived?: (message: string) => any;
+	private __onUnexpectedToken?: (unexpectedToken: string) => any;
 	private __conversationFailSafe: { id: number; connected: boolean } = { id: 0, connected: false };
 
 	constructor(options?: {}) {
@@ -29,7 +33,7 @@ export class Handler {
 
 	/**
 	 * Starts a new conversation. Opens a new browser if the instance has no currently opened browser.
-	 * @param conversationType String parameter: either "text" or "video". If the video is specified, an **absolute** video path must be provided as third parameter
+	 * @param conversationType String parameter: "text"
 	 * @param topics Optional parameter containing a list of strings that will be used as topics for the conversation.
 	 * @param cookies Optional parameter corresponding to the location of a cookie file for the browser. If no parameter is set, no cookie file will be used.
 	 * If the cookie file doesn't exist it will be created. Make sure the directory containing said file exists. Cookies will be rewritten on every new conversation.
@@ -38,17 +42,24 @@ export class Handler {
 
 	/**
 	 * Starts a new conversation. Opens a new browser if the instance has no currently opened browser.
-	 * @param conversationType String parameter: either "text" or "video". If the video is specified, an **absolute** video path must be provided as third parameter
+	 * @param conversationType String parameter: "video"
 	 * @param videoPath **absolute** path to the video file to be used in case a video conversation is started.
 	 * @param topics Optional parameter containing a list of strings that will be used as topics for the conversation.
 	 * @param cookies Optional parameter corresponding to the location of a cookie file for the browser. If no parameter is set, no cookie file will be used.
 	 * If the cookie file doesn't exist it will be created. Make sure the directory containing said file exists. Cookies will be rewritten on every new conversation.
 	 */
+
 	async startConversation(conversationType: "video", videoPath: string, topics?: string[], cookiesFilePath?: string): Promise<void>;
-	async startConversation(conversationType: "text" | "video", arg1?: string | string[], arg2?: string[] | string, arg3?: string) {
+	async startConversation<T extends "text" | "video">(
+		conversationType: T,
+		arg1?: T extends "text" ? topics : videoPath,
+		arg2?: T extends "text" ? cookiesFilePath : topics,
+		arg3?: T extends "text" ? undefined : cookiesFilePath
+	) {
 		let topics: string | string[] | undefined;
 		let videoPath: string;
 		let cookiesFilePath: string | undefined;
+
 		if (conversationType === "video") {
 			videoPath = <string>arg1;
 			topics = arg2;
@@ -125,11 +136,7 @@ export class Handler {
 	/**
 	 * Closes the browser.
 	 */
-	exit = async () => {
-		if (this.browser) {
-			this.browser.close();
-		}
-	};
+	exit = async () => this.browser && this.browser.close();
 
 	/**
 	 * Sends message to the stranger. A delay between keystrokes can be given.
