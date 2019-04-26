@@ -12,5 +12,14 @@
 		"puppeteer"
 	],
 	"author": "Lysandre Debut <lysandre.debut@gmail.com>",
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {
+		"typescript": "^3.4.5"
+	},
+	"dependencies": {
+		"@types/node-fetch": "^2.3.3",
+		"@types/puppeteer": "^1.12.3",
+		"node-fetch": "^2.3.0",
+		"puppeteer": "^1.15.0"
+	}
 }
