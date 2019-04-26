@@ -41,9 +41,9 @@ handler.sendMessage("Hello");
 
 ### Usage with video
 
-This library allows for video chat. In order to use video chat, you must provide a valid video file in the format `.y4m` so that Chromium may read it. More information about this format and how to create files that work can be found ["https://testrtc.com/y4m-video-chrome/"](here).
+This library allows for video chat. In order to use video chat, you must provide a valid video file in the format `.y4m` so that Chromium may read it. More information about this format and how to create files that work can be found [here](https://testrtc.com/y4m-video-chrome/).
 
-The path to the video file must be **absolute**;
+The path to the video file must be **absolute**.
 
 Here is an example of using video chat:
 
@@ -64,17 +64,9 @@ handler.sendMessage("Hello"); // __dirname returns the path of the current direc
 
 ### Events
 
-Here are listed all the events that can be raised by this library.
+Here are listed all the events that can be triggered by this library.
 
-#### onConnected(event)
-
-Triggered when the instance has connected to a stranger.
-
-```javascript
-handler.onConnected(() => console.log("Connected to stranger!"));
-```
-
-#### onDisconnected(event)
+#### onConnected(event: () => any)
 
 Triggered when the instance has connected to a stranger.
 
@@ -82,7 +74,7 @@ Triggered when the instance has connected to a stranger.
 handler.onConnected(() => console.log("Connected to stranger!"));
 ```
 
-#### onCaptcha(event)
+#### onDisconnected(event: () => any)
 
 Triggered when the instance has connected to a stranger.
 
@@ -90,7 +82,15 @@ Triggered when the instance has connected to a stranger.
 handler.onConnected(() => console.log("Connected to stranger!"));
 ```
 
-#### onMessageReceived(event)
+#### onCaptcha(even: (captchaID: string) => any)
+
+Triggered when the instance has connected to a stranger.
+
+```javascript
+handler.onConnected(() => console.log("Connected to stranger!"));
+```
+
+#### onMessageReceived(event: (message: string) => any)
 
 Triggered when the stranger has sent a message
 
@@ -98,23 +98,27 @@ Triggered when the stranger has sent a message
 handler.onMessageReceived(message => console.log("Message received:", message));
 ```
 
-#### onInformation(event)
+#### onInformation(event: (information: string) => any)
 
-Triggered when an information was printed on screen. Example of information messages: "Omegle couldn't find someone with the same interests".
+Triggered when an information was printed on screen.
+
+Example of information messages: "Omegle couldn't find someone with the same interests".
 
 ```javascript
 handler.onInformation(information => console.log("Received information", information));
 ```
 
-#### onError(event)
+#### onError(event: (error: string) => any)
 
-Triggered when the instance has received an error. The error "Connection to server blocked." means you have been IP blocked by Omegle. This usually happens if you're connecting from a server based on a platform such as Azure or AWS.
+Triggered when the instance has received an error.
+
+The error "Connection to server blocked." means you have been IP blocked by Omegle. This usually happens if you're connecting from a server based on a platform such as Azure or AWS.
 
 ```javascript
 handler.onError(error => console.log("Received error", error));
 ```
 
-#### onMessageSent(event)
+#### onMessageSent(event: (message: string) => any)
 
 Triggered when the instance has connected to a stranger.
 
@@ -122,7 +126,7 @@ Triggered when the instance has connected to a stranger.
 handler.onConnected(message => console.log("Script sent message", message));
 ```
 
-#### onUnexpectedToken(event)
+#### onUnexpectedToken(event: (unexpectedToken: string) => any)
 
 Triggered when the instance has received an unexpected token.
 
@@ -156,6 +160,7 @@ Example:
 
 ```javascript
 handler.startConversation("text", ["chat", "friends"], "./cookies");
+handler.startConversation("video", "/Users/<user>/file.y4m", ["chat", "friends"], "./cookies");
 ```
 
 #### sendMessage(message: string, delay?: number)
