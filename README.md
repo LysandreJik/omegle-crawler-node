@@ -22,7 +22,7 @@ yarn add omegle-node-crawler
 ### Usage
 
 This library uses an event-based mechanism.
-Start by binding your functions to the possible events and then start a conversation. All the events and methods are available in the documentation section [#documentation](below).
+Start by binding your functions to the possible events and then start a conversation. All the events and methods are available in the documentation section [below](#documentation).
 
 Crawler example usage:
 
@@ -56,8 +56,8 @@ handler.onConnected(() => handler.sendMessage("Hello."));
 handler.onDisconnected(() => console.log("Disconnected"));
 handler.onCaptcha(captchaIdentifier => console.log("Captcha found", captchaIdentifier));
 
-handler.startConversation("video");
-handler.sendMessage("Hello", __dirname + "/video.y4m"); // __dirname returns the path of the current directory.
+handler.startConversation("video", __dirname + "/video.y4m");
+handler.sendMessage("Hello"); // __dirname returns the path of the current directory.
 ```
 
 ## Documentation
@@ -134,12 +134,21 @@ handler.onConnected(unexpectedToken => console.log("Unexpected token!", unexpect
 
 Methods you can call on your `Handler` instance
 
-#### startConversation(conversationType[,options])
+#### startConversation(conversationType: "text" | "video" [,options])
 
 Start looking for a conversation. Launches the browser if it is not already open. The parameters are different according to the conversation type specified (text or video).
 
-For text: `startConversation("text", topics?: string[], cookiesFilePath?: string)`
-For video: `startConversation(conversationType: "video", videoPath: string, topics?: string[], cookiesFilePath?: string)`
+For text:
+
+```typescript
+startConversation("text", topics?: string[], cookiesFilePath?: string)
+```
+
+For video:
+
+```typescript
+startConversation(conversationType: "video", videoPath: string, topics?: string[], cookiesFilePath?: string)
+```
 
 Returns a promise that resolves once the page has been opened and all listeners have been initialized.
 
@@ -149,13 +158,11 @@ Example:
 handler.startConversation("text", ["chat", "friends"], "./cookies");
 ```
 
-#### sendMessage(message[,delay])
+#### sendMessage(message: string, delay?: number)
 
 Sends message to the stranger. A delay between keystrokes can be given.
 This delay is so that the information "Stranger is typing..." is displayed for a given amount of time.
 The default delay is 50ms.
-
-`sendMessage(message: string, delay?: number)`
 
 Returns a promise that resolves once the message has been sent.
 
@@ -165,7 +172,7 @@ Example:
 handler.sendMessage("Hi there", 50);
 ```
 
-#### Captcha solving
+#### solveCaptchaWith2CaptchaApiKey(captchaIdentifier: string, twoCaptchaAPIKey: string)
 
 Included is a way to solve captchas using the 2captcha API. When a captcha is displayed on screen, the `onCaptcha` event is triggered, calling the bound function with a captcha identifier. This built-in method can be used as follows:
 
@@ -174,6 +181,8 @@ handler.onCaptcha(captchaIdentifier => {
 	handler.solveCaptchaWith2CaptchaApiKey(captchaIdentifier, "api_key");
 });
 ```
+
+#### solveCaptcha(captchaResult: string)
 
 You can use the captcha identifier with any API to solve this captcha. Once a result is given by the API, you can solve the captcha as follows:
 
