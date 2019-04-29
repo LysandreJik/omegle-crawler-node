@@ -1,6 +1,6 @@
 {
 	"name": "omegle-crawler-node",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "Node library to connect to and interact with Omegle's website.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -11,7 +11,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/huggingface/omegle-crawler-node.git"
+		"url": "git+https://github.com/LysandreJik/omegle-crawler-node.git"
 	},
 	"keywords": [
 		"node",
