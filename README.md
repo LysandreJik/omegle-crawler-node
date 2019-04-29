@@ -100,7 +100,7 @@ Triggered when the instance has been disconnected from the stranger.
 Example:
 
 ```javascript
-handler.onDisconnected(() => console.log("Connected to stranger!"));
+handler.onDisconnected(() => console.log("Disconnected from stranger!"));
 ```
 
 #### onCaptcha(even: (captchaID: string) => any)
@@ -110,7 +110,7 @@ Triggered when the instance has received a captcha.
 Example:
 
 ```javascript
-handler.onCaptcha(() => console.log("Connected to stranger!"));
+handler.onCaptcha(captchaID => console.log("Captcha detected", captchaID));
 ```
 
 #### onMessageReceived(event: (message: string) => any)
