@@ -149,7 +149,7 @@ handler.onError(error => console.log("Received error", error));
 
 #### onMessageSent(event: (message: string) => any)
 
-Triggered when the instance has connected to a stranger.
+Triggered when the instance successfully sent a message.
 
 Example:
 
