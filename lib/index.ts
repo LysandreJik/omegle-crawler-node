@@ -109,20 +109,15 @@ export class Handler {
 			.on("console", this.__observeLogs)
 			.on("dialog", dialog => dialog.accept());
 
-		if (this.page.url() === "https://www.omegle.com/" || this.page.url() === "https://www.omegle.com" || this.page.url() === "www.omegle.com") {
-			await this.page.waitFor(1000);
-			await this.page.keyboard.press("escape");
-		} else {
-			await this.page.goto("https://www.omegle.com", { timeout: 0 });
-			if (topics) {
-				const topicsSelector = ".newtopicinput";
-				await this.page.waitForSelector(topicsSelector);
-				await this.page.click(topicsSelector);
-				for (const topic of topics) {
-					if (this.page) {
-						await this.page.keyboard.type(topic);
-						await this.page.keyboard.press("Enter");
-					}
+		await this.page.goto("https://www.omegle.com", { timeout: 0 });
+		if (topics) {
+			const topicsSelector = ".newtopicinput";
+			await this.page.waitForSelector(topicsSelector);
+			await this.page.click(topicsSelector);
+			for (const topic of topics) {
+				if (this.page) {
+					await this.page.keyboard.type(topic);
+					await this.page.keyboard.press("Enter");
 				}
 			}
 		}
